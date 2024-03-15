@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@font-face {
+    font-family: 'shatomi';
+    src: url('./font/Shatomi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root{
+    --header_color: #fff;
+    --default_font-fanily: 'Inter', sans-serif;
+    --shatomi_font: 'shatomi';
+    --primary_color: #0066ff;
+    --p_op95_color: #0066ff95;
+    --stroke_color: #bcc3cc;
+    --nav_txt_color: #271a38;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--default_font-fanily);
+}
+
+header{
+    background-color: var(--header_color);
+    padding: 5px 0;
+    border-bottom: solid 1px #00000045;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    margin: 0 50px;
+    /* gap: 25px */
+}
+
+.w_burger{
+    position: relative;
+    display: none;
+}
+
+.burgerBar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.bi-list{
+    position: absolute;
+    transition: all ease .3s;
+}
+
+.logo{
+    font-family: var(--shatomi_font);
+    /* font-size: 1.5rem; */
+    font-weight: bold;
+    user-select: none;
+    white-space: nowrap;
+    display: block;
+    text-decoration: none;
+    color: var(--primary_color);
+}
+
+/* Navigation */
+
+.navList ul{
+    list-style-type: none;
+}
+
+.navList_item{
+    float: left;
+    /* position: relative */
+}
+
+.navListBtn{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--nav_txt_color);
+    cursor: pointer;
+    user-select: none;
+    transition: color ease .3s;
+}
+
+.navListBtn:hover,
+.burgerBar:hover .bi-list,
+.show_search-btn:hover .bi-search-show{
+    color: var(--p_op95_color);
+}
+
+.navList_drop_btn,
+.dropForNav{
+    display: flex;
+    align-items: center;
+}
+
+.navList_dropCotent{
+    display: none;
+    position:absolute;
+    background-color: red;
+    left: 0;
+    right: 0;
+    margin-top: 5px;
+}
+
+/* SEARCH */
+
+.w_search{
+    width: 50%;
+    height: 47px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* border-radius: 50px; */
+    /* overflow: hidden; */
+    /* border: solid 1px red */
+}
+.search_bar{
+    position: absolute;
+    right: 0;
+    left: 100%;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    /* border-bottom: solid 1px #000; */
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: ease all .2s;
+    /* border: solid 1px blue; */
+}
+
+.boxShadow{
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px
+}
+
+.search_bar_show{
+    left: 0;
+    width: 100%;
+    transition: ease all .3s
+}
+
+.bi-search{
+    position: absolute;
+    transition: ease all .3s;
+}
+
+/* .bi-search-hidden,
+.search_bar_show .bi-search-show{
+    opacity: 0;
+}
+
+.bi-search-show,
+.search_bar_show .bi-search-hidden{
+    opacity: 1;
+} */
+
+.search_input{
+    width: calc(100% - 50px);
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    color: var(--nav_txt_color);
+    font-weight: 400;
+    font-size: medium;
+}
+
+.show_search{
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    /* background-color: #fff; */
+    padding: 3px;
+    right:0;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.show_search-btn{
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    /* background-color: var(--p_op95_color); */
+    border-radius: 50px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all ease .3s
+}
+
+.show_search-btn:hover .bi-search-hidden{
+    color: #fff
+}
+
+.search_input::-webkit-search-cancel-button{
+    display: none;
+}
+
+.search-cancel-btn{
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    position: absolute;
+    right: 45px;
+    cursor: pointer
+}
+
+.search-cancel-btn:hover{
+    background-color: #46464618;
+}
+
+.bi-search-cancel-btn{
+    fill: #000
+}
+
+/* .bi-search-hidden{
+    opacity: 0;
+} */
+
+/* ACCOUNT */
+
+.w_account .dropdown{
+    position:relative
+}
+
+button.account{
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+    padding: 3px;
+    border: solid 1px var(--stroke_color);
+    border-radius: 50px;
+}
+
+button.account:hover{
+    background-color: #0066ff4c;
+}
+
+.acc-profil{
+    background-color: var(--p_op95_color);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+.up_down_i{
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.bi-chevron{
+    position: absolute
+}
+
+.bi-list-hidden,
+.bi-search-hidden,
+.bi-chevron-up{
+    opacity: 0;
+}
+
+.active .bi-chevron-down{
+    opacity: 0;
+    /* transition: all ease .5s */
+}
+
+.active .bi-chevron-up{
+    opacity: 1;
+    transition: all ease .3s
+}
+
+.drop_content{
+    display: none;
+    position: absolute;
+    width: max-content;
+    right: 0;
+    background-color: #0066ff4c;
+    /* transform: translateY(5px); */
+}
+
+.show_drop{
+    display: block;
+}
+
+.drop_content ul{
+    list-style-type: none;
+}
+
+.connectionBtn{
+    text-decoration: none;
+    color: var(--nav_txt_color);
+    display: block;
+    padding: 15px;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+.connectionBtn:hover{
+    background-color: #fff;
+}
+
+main{
+    /* background: url('./janko-ferlic-sfL_QOnmy00-unsplash.jpg'); */
+}
+
+@media screen and (max-width: 1049px){
+    .wrapper{
+        margin: 0 25px;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 945px){
+    .wrapper{
+        margin: 0 50px;
+        padding: 0 10px;
+    }
+
+    nav{
+        display: none
+    }
+
+    .w_burger{
+        display: block
+    }
+}
