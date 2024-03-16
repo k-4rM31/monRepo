@@ -8,6 +8,24 @@
     <style>
         header{
             background-color: #27035d;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .burger{
+            border: solid 1px rgb(166, 166, 220);
+            border-radius: 50px
+        }
+
+        .b_line{
+            width: 15px;
+            height: 3px;
+            background-color: #000;
+            display: block
+        }
+        
+        .b_line:not(.no_mb){
+            margin-bottom: 3px;
         }
         h1{
             color: blue;
@@ -21,6 +39,11 @@
     <!-- ajjout de la structure de base -->
     <!-- ajout d'un titre h1 pour le prochain commit test -->
     <header>
+        <div class="burger">
+            <span class="b__line"></span>
+            <span class="b__line"></span>
+            <span class="b__line no_mb"></span>
+        </div>
        <h1>hello word</h1> 
     </header>
 </body>
